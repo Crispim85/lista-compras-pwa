@@ -92,20 +92,24 @@ function sortearItem() {
 
   for (let i = 0; i < lista.children.length; i++) {
     const item = lista.children[i];
-    const checkbox = item.querySelector('input[type="checkbox"]');
-    if (!checkbox.checked) {
-      const nomeItem = item.querySelector("span")?.innerText || item.innerText;
-      itensNaoComprados.push(nomeItem);
+    
+    if (!item.classList.contains("checked")) {
+      const nomeItem = item.querySelector("span, a");
+      if (nomeItem) {
+        itensNaoComprados.push(nomeItem.innerText.trim());
+      }
     }
   }
 
+  const resultado = document.getElementById("itemSorteado");
+
   if (itensNaoComprados.length === 0) {
-    document.getElementById("itemSorteado").innerText = "Todos os itens já foram comprados!";
+    resultado.innerText = "Todos os itens já foram comprados!";
     return;
   }
 
   const indexSorteado = Math.floor(Math.random() * itensNaoComprados.length);
   const itemSorteado = itensNaoComprados[indexSorteado];
 
-  document.getElementById("itemSorteado").innerText = `Item sorteado: ${itemSorteado}`;
+  resultado.innerText = `Item sorteado: ${itemSorteado}`;
 }
