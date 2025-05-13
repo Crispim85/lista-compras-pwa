@@ -14,7 +14,6 @@
     font-size: 2rem;
     color: #333;
   }
-
   #form {
     display: flex;
     flex-direction: column;
@@ -108,4 +107,8 @@
       width: 100%;
       justify-content: flex-start;
     }
+  }
+
+  #sort {
+    text-align: center;
   }

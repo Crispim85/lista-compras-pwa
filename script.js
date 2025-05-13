@@ -85,3 +85,27 @@ if ('serviceWorker' in navigator) {
     console.log("Erro ao registrar Service Worker:", err);
   });
 }
+
+function sortearItem() {
+  const lista = document.getElementById("lista");
+  const itensNaoComprados = [];
+
+  for (let i = 0; i < lista.children.length; i++) {
+    const item = lista.children[i];
+    const checkbox = item.querySelector('input[type="checkbox"]');
+    if (!checkbox.checked) {
+      const nomeItem = item.querySelector("span")?.innerText || item.innerText;
+      itensNaoComprados.push(nomeItem);
+    }
+  }
+
+  if (itensNaoComprados.length === 0) {
+    document.getElementById("itemSorteado").innerText = "Todos os itens já foram comprados!";
+    return;
+  }
+
+  const indexSorteado = Math.floor(Math.random() * itensNaoComprados.length);
+  const itemSorteado = itensNaoComprados[indexSorteado];
+
+  document.getElementById("itemSorteado").innerText = `Item sorteado: ${itemSorteado}`;
+}
