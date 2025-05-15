@@ -12,14 +12,21 @@
   </head>
   
 <body>
-    <h1>🛒 Lista de Compras</h1>
-    <div id="form">
-      <input type="text" id="itemInput" placeholder="Digite um item..." />
-      <input type="text" id="itemLink" placeholder="Link do produto (opcional)">
-      <button onclick="adicionarItem()">Adicionar</button>
+  <h1>Gerenciador de Listas</h1>
+
+  <div id="categorias">
+    <label for="categoriaSelect">Categoria:</label>
+    <select id="categoriaSelect" onchange="trocarCategoria()"></select>
+  </div>
+
+  <div id="form">
+    <input type="text" id="itemInput" placeholder="Digite um item..." />
+    <input type="text" id="itemLink" placeholder="Link do produto (opcional)">
+    <button onclick="adicionarItem()">Adicionar</button>
   </div>  
 
   <ul id="lista"></ul>
+
   <div id="sort">
     <button onclick="sortearItem()">🎲 Sortear item</button>
     <p id="itemSorteado" style="font-weight: bold; margin-top: 10px;"></p>
