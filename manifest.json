@@ -1,12 +1,12 @@
 {
-  "name": "Lista de Compras",
-  "short_name": "Compras",
-  "start_url": "/lista-compras-pwa/",
+  "name": "Gerenciador de Listas",
+  "short_name": "Listas",
+  "start_url": "/listas-pwa/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4CAF50",
   "orientation": "portrait",
-  "scope": "/lista-compras-pwa/",
+  "scope": "/listas-pwa/",
   "icons": [
     {
       "src": "icon-192.png",
